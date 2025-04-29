@@ -1,4 +1,7 @@
-toyfactory/ToyFactory.class
 toyfactory/AppConfig.class
+toyfactory/LifecycleLoggerPostProcessor.class
 toyfactory/Toy.class
 toyfactory/ToyFactoryRunner.class
+toyfactory/ToyScopeTweaker.class
+toyfactory/ToyFactory.class
+toyfactory/ContextSpy.class
