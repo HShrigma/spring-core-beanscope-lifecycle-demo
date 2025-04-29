@@ -24,4 +24,8 @@ public class AppConfig {
         return new Toy();
     }
 
+    @Bean
+    public ToyFactory toyFactory(){
+        return new ToyFactory();
+    }
 }

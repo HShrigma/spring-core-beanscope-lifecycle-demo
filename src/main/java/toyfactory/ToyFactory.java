@@ -1,18 +1,22 @@
 package toyfactory;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Component;
 
 @Component
 public class ToyFactory {
 
     @Autowired
+    @Qualifier("singletonToy")
     private Toy singletonToy;
 
     @Autowired
+    @Qualifier("prototypeToy1")
     private Toy prototypeToy1;
 
     @Autowired
+    @Qualifier("prototypeToy2")
     private Toy prototypeToy2;
 
     public void produceToys(){
