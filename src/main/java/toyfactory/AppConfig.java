@@ -3,6 +3,7 @@ package toyfactory;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
+import org.springframework.context.annotation.Conditional;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.Profile;
 import org.springframework.context.annotation.Scope;
@@ -27,7 +28,7 @@ public class AppConfig {
     public Toy prototypeToy2() {
         return new Toy();
     }
-    
+
     @Bean
     @Profile("dev")
     @Qualifier("profiledToy")
@@ -41,6 +42,12 @@ public class AppConfig {
     @Qualifier("profiledToy")
     public Toy prodToy() {
         System.out.println("[PROFILED BEAN] Loaded Prod Toy");
+        return new Toy();
+    }
+    @Bean
+    @Conditional(MyCondition.class)
+    @Qualifier("conditionalToy")
+    public Toy conditionalToy(){
         return new Toy();
     }
     @Bean
