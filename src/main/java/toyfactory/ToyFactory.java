@@ -21,12 +21,17 @@ public class ToyFactory {
     @Qualifier("prototypeToy2")
     private Toy prototypeToy2;
 
+    @Autowired
+    @Qualifier("profiledToy")
+    private Toy profiledToy;
+
     public void produceToys(){
         System.out.println("\nProducing toys...");
 
         System.out.println("Singleton Toy ID: " + singletonToy.getId());
         System.out.println("Prototype Toy 1 ID: " + prototypeToy1.getId());
         System.out.println("Prototype Toy 2 ID: " + prototypeToy2.getId());
+        System.out.println("Profiled Toy ID: " + profiledToy.getId());
     }
     
     @PreDestroy
