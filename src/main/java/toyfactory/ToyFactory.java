@@ -28,6 +28,10 @@ public class ToyFactory {
     @Autowired
     @Qualifier("conditionalToy")
     private Toy conditionalToy;
+
+    @Autowired
+    ToyOrderService orderService;
+
     public void produceToys(){
         System.out.println("\nProducing toys...");
 
@@ -36,6 +40,8 @@ public class ToyFactory {
         System.out.println("Prototype Toy 2 ID: " + prototypeToy2.getId());
         System.out.println("Profiled Toy ID: " + profiledToy.getId());
         System.out.println("Conditional Toy ID: " + conditionalToy.getId());
+
+        orderService.orderToy("LegoCastle");
     }
     
     @PreDestroy
